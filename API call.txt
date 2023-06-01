@@ -1,0 +1,21 @@
+Pre-requiest Script: It is used for call/run another payload before run current payload.(Note: Not implemented at all).
+
+
+ pm.test('post request',function(){
+         pm.sendRequest({
+             url:'{{url}}/api/v2/user/token-auth/',
+             method:'POST',
+            header:{
+                  'Authorization':'JWT {{token}}'
+            },
+            body:{
+               mode:'raw',
+                raw:JSON.stringify({
+                 "password": "abc@123",
+                  "email":"abc@efg.com"
+               })
+        
+        }
+
+        });
+ });
